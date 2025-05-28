@@ -1,0 +1,88 @@
+algoritmo "vetor_menu"
+var
+   soma, maior, menor, opcao,i: inteiro
+   media: real
+   num: vetor[1..5] de inteiro
+procedimento preenchvet()
+inicio
+   para i de 1 ate 5 faca
+      escreva("Me informe um número: ")
+      leia(num[i])
+   fimpara
+
+   escreval("Os valores digitados foram: ")
+   para i de 1 ate 5 faca
+      escreval(num[i])
+   fimpara
+fimprocedimento
+
+procedimento somavetor()
+inicio
+   soma <- 0
+   para i de 1 ate 5 faca
+      soma <- soma + num[i]
+   fimpara
+   escreval("A soma dos valores é: ", soma)
+fimprocedimento
+
+procedimento maiorvalor()
+inicio
+   maior <- num[i]
+   para i de 1 ate 5 faca
+      se( maior < num[i]) entao
+         maior <- num[i]
+      fimse
+   fimpara
+   escreval("O maior valor é: ", maior)
+fimprocedimento
+
+procedimento menorvalor()
+inicio
+   menor <- num[i]
+   para i de 1 ate 5 faca
+      se( menor > num[i]) entao
+         menor <- num[i]
+      fimse
+   fimpara
+   escreval("O menor valor é: ", menor)
+fimprocedimento
+
+procedimento mediavetor()
+inicio
+   soma <- 0
+   para i de 1 ate 5 faca
+      soma <- soma + num[i]
+   fimpara
+   media <- soma / 5
+   escreval("A média dos valores é: ", media)
+fimprocedimento
+
+inicio
+   limpatela
+   enquanto opcao <> 6 faca
+      escreval("===========================")
+      escreval("       MENU DE OPCOES       ")
+      escreval("===========================")
+      escreval("[1] Preencher o vetor")
+      escreval("[2] Realizar soma dos vetores")
+      escreval("[3] Mostrar o maior valor")
+      escreval("[4] Mostrar o menor valor")
+      escreval("[5] Calcular a média")
+      escreval("[6] Sair")
+      escreval("Escolha uma opção: ")
+      leia(opcao)
+      limpatela
+      escolha opcao
+      caso 1
+         preenchvet()
+      caso 2
+         somavetor()
+      caso 3
+         maiorvalor()
+      caso 4
+         menorvalor()
+      caso 5
+         mediavetor()
+      fimescolha
+   fimenquanto
+fimalgoritmo
